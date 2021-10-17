@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <script>
+
+
+    //   function SelectionPage() {
+    //     var x = "/Users/chloe/Desktop/COSC 425/local chloe/"; 
+
+    //     // User Selected Operation
+    //     if (document.getElementById("Addition").checked) {
+    //       x += "Addition";
+    //     } else if (document.getElementById("Subtraction").checked) {
+    //       x += "Subtraction";
+    //     } else if (document.getElementById("Division").checked) {
+    //       x += "Division";
+    //     } else if (document.getElementById("Multiplication").checked) {
+    //       x += "Multiplication";
+    //     }
+
+    //     // random question type was selected. Generates question and sends to a new page
+    //     if (document.getElementById("Random").checked) {
+    //       // x+="Random"
+    //        window.location =  "workSpace.html";
+    //       // TODO : generate random numbers to pass into the worsSpace.html page
+
+    //       // takes them to the next page to enter in their information
+    //     } else if (document.getElementById("Create").checked) {
+    //       x += "Create";
+    //        window.location = x + ".html";
+    //     }
+    //   }
+
+
+    // function checkCreate() {
+
+    //   if (document.getElementById("Create").checked) {
+    //     // document.getElementById("createForm").submit(); //form submission
+    //        window.location = "create.html";
+        
+    //   } else{
+    //       window.location = "workSpace.html";
+
+    //   }
+
+    // }
+     // }
+     
+    function submitCheck() {
+      if (document.getElementById("Create").checked) {
+        document.getElementById("homeForm1").action = "create.html";
+        document.getElementById("homeForm1").submit(); //form submission
+        
+      } else if (document.getElementById("Random").checked){
+        document.getElementById("homeForm1").action = "workspace.html";
+        // document.getElementById("homeForm").submit(); //form submission
+
+      }
+
+    }
+
+
+
+  </script>
+  <title>Fraction Visualizer</title>
+</head>
+
+<body>
+  <p></p>
+  <form method="get" id="homeForm1" action="create.html">
+
+      <div>
+        <input type="radio" id="Addition" name="choice1" value="Addition" />
+        <label for="Addition">Addition</label>
+
+        <input type="radio" id="Subtraction" name="choice1" value="Subtraction" />
+        <label for="Subtraction">Subtraction</label>
+
+        <input type="radio" id="Division" name="choice1" value="Division" />
+        <label for="Division">Division</label>
+
+        <input type="radio" id="Multiplication" name="choice1" value="Multiplication" />
+        <label for="Multiplication">Multiplication</label>
+      </div>
+
+      <div>
+        <input type="radio" id="Random" name="choice2" value="Random" />
+        <label for="Random">Random</label>
+
+        <input type="radio" id="Create" name="choice2" value="Create" />
+        <label for="Create">Create your own</label>
+      </div>
+
+      <div>
+        <button type="submit" onclick="return submitCheck()" >Start</button>
+      </div>
+    </form>
+  </form>
+</body>
+
+</html>
