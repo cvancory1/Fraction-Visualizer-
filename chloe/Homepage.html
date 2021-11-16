@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="home.css">
+
+  <script>
+
+    // functions if the user generates a random problem 
+    // between 1-6
+    function randNumerator() {
+      var MAXNUM = 6;
+      return Math.floor(Math.random() * MAXNUM) + 1;
+
+    }
+
+    // between 2-6
+    function randDenom() {
+      var MAXNUM = 6;
+
+      return Math.floor(Math.random() * MAXNUM) + 2;
+      // return 2;
+    }
+
+
+
+    function submitCheck() {
+      if (document.getElementById("Create").checked) {
+        document.getElementById("homeForm1").action = "create.html";
+        document.getElementById("homeForm1").submit(); //form submission
+
+      } else if (document.getElementById("Random").checked) {
+        var rightNum = randNumerator();
+        var rightDenom = randDenom();
+        var leftNum = randNumerator();
+        var leftDenom = randDenom();
+
+
+
+        // makes sure fraction != 1 and its a proper frac
+        while (rightNum == rightDenom || rightNum > rightDenom) {
+          // console.log("match1");
+          rightNum = randNumerator();
+          // console.log(rightNum);
+
+        }
+
+        while (leftNum == leftDenom || leftNum > leftDenom) {
+          // console.log("match2");
+          // console.log(leftNum);
+          // console.log(leftDenom);
+          leftNum = randNumerator();
+          // console.log(leftNum);
+
+        }
+
+
+        document.getElementById("leftNumerator").value = leftNum;
+        document.getElementById("leftDenominator").value = leftDenom;
+        document.getElementById("rightNumerator").value = rightNum;
+        document.getElementById("rightDenominator").value = rightDenom;
+        document.getElementById("homeForm1").action = "workspace.html";
+        // document.getElementById("homeForm").submit(); //form submission
+      }
+
+    }
+
+
+
+  </script>
+
+  <title>Fraction Visualizer</title>
+</head>
+<h1> Welcome to the Fraction Visualizer!</h1>
+
+<body>
+
+  <div class="content">
+    <form method="get" id="homeForm1" action="create.html">
+
+      <div class="operationsContainer">
+        <input type="radio" id="Addition" name="operationChoice" value="Addition" />
+        <label for="Addition">Addition</label>
+
+        <input type="radio" id="Subtraction" name="operationChoice" value="Subtraction" />
+        <label for="Subtraction">Subtraction</label>
+
+        <input type="radio" id="Division" name="operationChoice" value="Division" />
+        <label for="Division">Division</label>
+
+        <input type="radio" id="Multiplication" name="operationChoice" value="Multiplication" />
+        <label for="Multiplication">Multiplication</label>
+      </div>
+
+      <div class="typeContainer">
+        <input type="radio" id="Random" name="choice2" value="Random" />
+        <label for="Random">Random</label>
+
+        <input type="radio" id="Create" name="choice2" value="Create" />
+        <label for="Create">Create your own</label>
+      </div>
+
+      <div class="submitContainer">
+        <button type="submit" class="submitButton" onclick="return submitCheck()">Start</button>
+      </div>
+
+      <input type="hidden" id="leftNumerator" name="leftNum" value="" />
+      <input type="hidden" id="leftDenominator" name="leftDenom" value="" />
+      <input type="hidden" id="rightNumerator" name="rightNum" value="" />
+      <input type="hidden" id="rightDenominator" name="rightDenom" value="" />
+
+    </form>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+
+ h1 {
+    font-size: medium;
+    font-size: xx-large;
+    color: black;
+    text-align: center;
+
+  }
+  .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    /* z-index: -1; */
+
+}  
+
+  
+/* .barContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    
+}  */
+
+.top_fractionContainer{
+      /* display: flex; */
+    /* align-items: center;
+    justify-content: center; */
+    /* margin-top: 25px;
+    margin-bottom: 10px;
+    background-color: green; */
+
+    /* height: 20px; */
+    /* width: min-content;   */
+
+   /* border-bottom: black solid 2px; */
+ }  
+
+/* .bottom_fractionContainer{ */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* margin-top: 25px;
+    margin-bottom: 10px;
+    background-color: blue; */
+
+/* }  */
+
+
+
+
+
+ 
+ #rightNum,
+#rightDenom{
+    margin-left: 25px;
+    margin-right: 25px;
+    font-family: sans-serif, Arial;
+    font-size: 30px;
+
+
+} 
+
+#operationSign,
+#answerNum,
+#answerDenom,
+#leftNum,
+#leftDenom{
+    
+    margin-left: 25px;
+    margin-right: 25px;
+    font-family: sans-serif, Arial;
+    font-size: 30px;
+
+}
+
+#leftNum,
+#rightNum{
+   border-bottom: black solid 2px;
+
+}
+#bar{
+    font-size: 20px;
+    background-color: yellow;
+    align-items: center;
+    text-align: right;
+} 
+
+
+
+#canvas{
+    position: absolute;
+}
+
+
+input[type="text"] {
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+
+.submitContainer{
+    text-align: center;
+}
+
+.submitButton {
+    display: inline-block;
+    background-color: #ddd;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 4px;
+
+}
+
+.submitButton:hover {
+    color: rgb(45, 149, 172);   
+}
